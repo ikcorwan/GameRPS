@@ -1,0 +1,27 @@
+{
+  "name": "gamerps",
+  "version": "1.0.0",
+  "description": "Rock Paper Scissors - Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikcorwan/GameRPS.git"
+  },
+  "author": "Jarosław Nawrocki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikcorwan/GameRPS/issues"
+  },
+  "homepage": "https://github.com/ikcorwan/GameRPS#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "browserlist": "^1.0.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
