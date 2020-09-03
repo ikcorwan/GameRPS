@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors - Game</title>
+    <meta name="description" content="A simple JavaScript game. Made as part of learning.">
+    <meta name="author" content="Jarosław Nawrocki">
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:ital,wght@0,400;1,100&display=swap"
         rel="stylesheet">
@@ -12,7 +14,71 @@
 </head>
 
 <body>
-
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="#" class="navbar__brand">
+                    <img src="images/logo.png" alt="game logo">
+                </a>
+            </div>
+        </div>
+    </header>
+    <section class="game">
+        <div class="container">
+            <h1 class="title">Rock-Paper-Scissors Game!</h1>
+            <h2 class="subtitle">
+                <hr class="hr__text" data-content="Choose your move">
+            </h2>
+            <div class="flexbox">
+                <div class="game__select flexbox">
+                    <img data-option="rock" src="images/rock.svg" alt="rock" class="image image_rock">
+                    <img data-option="paper" src="images/paper.svg" alt="paper" class="image image__paper">
+                    <img data-option="scissors" src="images/scissors.svg" alt="scissors" class="image image__scissors">
+                </div>
+            </div>
+            <button class="button button__start">
+                <i class="icon icon__play fa fa-arrow-right pull-left"></i>
+                Let's play!
+            </button>
+            <button class="button button__restart">
+                <i class="icon icon__restart fa fa-retweet pull-left"></i>
+                Restart</button>
+            <div class="flexbox">
+                <div class="game__results flexbox">
+                    <div class="result">
+                        <h3 class="result__title">Game results</h3>
+                        <div class="panel flexbox">
+                            <p class="parahraph">You:<br>
+                                <span class="panel__choice" data-summary="your-choice"></span></p>
+                            <p class="parahraph">Computer:<br>
+                                <span class="panel__choice" data-summary="ai-choice"></span></p>
+                            <p class="parahraph winner"><span data-summary="who-win"></span></p>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <h3 class="result__title">Game scores</h3>
+                        <div class="panel flexbox">
+                            <p class="paragraph numbers">Rounds: <span></span></p>
+                            <hr class="hr">
+                            <p class="paragraph wins">Player: <span>0</span></p>
+                            <p class="paragraph losses">Computer: <span>0</span></p>
+                            <p class="paragraph draws">(Draws: <span>0</span>)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="paragraph footer__copyright">Copyright &copy; 2020
+                    <a href="https://nawrocki.io" target="_blank" rel="noopener noreferrer"><img class="footer__img"
+                            src="../images/logo-footer.svg" alt="logo-footer" loading="lazy"></a>
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
