@@ -1,0 +1,32 @@
+// *** Breakpoints - Media Queries ***
+
+@mixin mq($breakpoint) {
+    $size: map-get($breakpoints, $breakpoint);
+
+    @if($size) {
+        @media #{$size} {
+            @content;
+        }
+    }
+
+    @else {
+        @error '"#{$breakpoint}" - I dont know this value';
+    }
+}
+
+// *** Box ***
+
+@mixin box($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// *** Background Image ***
+
+@mixin background($url, $repeat:no-repeat, $size:cover, $positionX:0, $positionY:0) {
+    background-image: url($url);
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $positionX $positionY;
+
+}
