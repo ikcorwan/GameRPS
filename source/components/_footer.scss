@@ -1,0 +1,18 @@
+.footer {
+    padding: 10px 0;
+    background-color: $colorDarkGray;
+    color: $colorGray;
+    font-weight: normal;
+    text-transform: none;
+
+    &__img {
+        padding: 0 0.3rem 0.1rem 0.3rem;
+        @include box (7rem, 0.7rem);
+        filter: grayscale(100%);
+    }
+
+    &__copyright {
+        font-size: .9rem;
+
+    }
+}

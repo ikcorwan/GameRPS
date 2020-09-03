@@ -1,0 +1,109 @@
+.image {
+    @include box (70px, 70px);
+    align-self: center;
+    padding: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        box-shadow: 0 0 1px 2px $colorGray;
+        transition: all 0.3s ease 0s;
+    }
+}
+
+.game {
+    padding: 30px 0;
+    box-shadow: inset 0px 1px 1px 0px rgba($color: $colorGray, $alpha: 0.1);
+    background-color: $colorPearl;
+
+    &__select {
+        padding: 20px 0;
+        flex: 0 0 100%;
+    }
+
+    &__results {
+        padding: 20px 0;
+        width: 100%;
+        align-items: stretch;
+    }
+}
+
+
+.panel {
+    padding: 20px 5px;
+    justify-content: space-around;
+
+    &__choice {
+        display: block;
+        font-weight: normal;
+        color: rgba($color: $colorDarkGray, $alpha: 0.8);
+        padding: 5px;
+    }
+}
+
+
+.result {
+    margin: 15px 0;
+    padding: 5px 5px;
+    background-color: $colorWhite;
+    box-shadow: 0px 0px 1px 1px rgba($color: $colorGray, $alpha: 0.1);
+    flex: 0 0 100%;
+
+
+    &__title {
+        position: relative;
+        top: -0.6rem;
+        display: inline;
+        background-color: $colorDarkGray;
+        color: $colorWhite;
+        font-size: 0.8rem;
+        border-radius: 3px;
+        letter-spacing: .1rem;
+        padding: 0.2rem 0.5rem;
+    }
+}
+
+.draws {
+    padding: 10px 0;
+    flex: 0 0 100%;
+    font-weight: normal;
+    color: rgba($color: $colorDarkGray, $alpha: 0.8);
+}
+
+.winner {
+    padding: 10px 0;
+    flex: 0 0 100%;
+    font-family: $fontAccent;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+
+.numbers {
+    flex: 0 0 100%;
+}
+
+// *** Media Queries ***
+@include mq (large) {
+    body {
+        height: 100vh;
+    }
+
+    .game {
+        &__select {
+            flex: 0 0 100%;
+            max-width: 600px;
+        }
+
+        &__results {
+            max-width: 600px;
+            flex-wrap: nowrap;
+        }
+    }
+
+    .result {
+        flex: 0 0 50%;
+        margin: 0 10px;
+    }
+}
