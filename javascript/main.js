@@ -26,11 +26,16 @@ const hands = [...document.querySelectorAll(".game__select img")];
 const playerChoice = document.querySelector('[data-summary="your-choice"]');
 const computerChoice = document.querySelector('[data-summary="ai-choice"]');
 const winner = document.querySelector('[data-summary="who-win"]');
+const btnStart = document.querySelector('.button__start');
+const btnRestart = document.querySelector('.button__restart');
+btnStart.disabled = true;
+btnRestart.disabled = true;
 
 function handSelection() {
     game.playerHand = this.dataset.option;
     hands.forEach(hand => hand.style.boxShadow = "");
     this.style.boxShadow = "0 0 1px 2px #333";
+    btnStart.disabled = false;
     playerChoice.textContent = ` ${game.playerHand}`;
     computerChoice.textContent = "";
     winner.textContent = "";
@@ -90,6 +95,7 @@ function endGame() {
     document.querySelector(`[data-option = "${game.playerHand}"]`).style.boxShadow = "";
     game.playerHand = "";
     game.aiHand = "";
+    btnStart.disabled = true;
 }
 
 function restartGame() {
@@ -104,22 +110,27 @@ function restartGame() {
     document.querySelector('.wins span').textContent = "0";
     document.querySelector('.losses span').textContent = "0";
     document.querySelector('.draws span').textContent = "0";
+    btnRestart.disabled = true;
+    endGame();
 }
 
 //Funkcja sterująca
 
 function startGame() {
     if (game.playerHand === "") {
-        return alert("Choose a hand!");
+        btnStart.disabled = true;
     }
     game.aiHand = aiChoice();
     const gameResult = checkResult(game.playerHand, game.aiHand);
     publishResult(game.playerHand, game.aiHand, gameResult);
+    if (gameSummary.numbers > 0) {
+        btnRestart.disabled = false;
+    }
     endGame();
 
 }
 
 hands.forEach(hand => hand.addEventListener("click", handSelection));
 
-document.querySelector(".button__start").addEventListener("click", startGame);
-document.querySelector(".button__restart").addEventListener("click", restartGame);
+btnStart.addEventListener("click", startGame);
+btnRestart.addEventListener("click", restartGame);

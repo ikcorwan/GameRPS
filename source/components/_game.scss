@@ -13,7 +13,7 @@
 
 .game {
     padding: 30px 0;
-    box-shadow: inset 0px 1px 1px 0px rgba($color: $colorGray, $alpha: 0.1);
+    box-shadow: 0px 0px 1px 2px rgba($color: $colorDarkGray, $alpha: 0.2);
     background-color: $colorPearl;
 
     &__select {

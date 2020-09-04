@@ -12,18 +12,18 @@
     font-weight: 700;
     border-radius: 2px;
     border: solid 1px $colorDarkGray;
-    box-shadow: 0px 0px 1px 2px rgba($color: $colorGray, $alpha: 0.1);
 
-    &__start {
+    &:hover {
         transition: all 0.3s ease 0s;
+        border: solid 1px $colorDarkGray;
+        box-shadow: 0px 0px 1px 2px rgba($color: $colorDarkGray, $alpha: 0.2);
 
-        &:hover {
-            transition: all 0.3s ease 0s;
-            border: solid 1px $colorDarkGray;
-        }
     }
 
-    &__restart {
+    &:disabled {
+        cursor: not-allowed;
+        color: $colorGray;
+        border-color: $colorGray;
         transition: all 0.3s ease 0s;
     }
 
